@@ -1,0 +1,119 @@
+<style>
+.dim {
+  opacity: 0.25;
+}
+</style>
+
+<div class="container">
+
+  <h1>Portfolio</h1>
+  <br />
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a class="nav-all" href="#">All</a></li>
+    <li role="presentation"><a class="nav-print" href="#">Print</a></li>
+    <li role="presentation"><a class="nav-ux" href="#">UX</a></li>
+    <li role="presentation"><a class="nav-web" href="#">Web</a></li>
+    <li role="presentation"><a class="nav-apps" href="#">Apps</a></li>
+  </ul>
+  <br />
+  <div class="main">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default web">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default web">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default ux">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default ux">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default print">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default print">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default apps">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default apps">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+
+<script>
+$(document).ready(function() {
+  $('.nav-tabs li a').click(function(){
+    $('.nav-tabs li').removeClass('active');
+    $('.print, .ux, .web, .apps').addClass('dim');
+    $(this).parent('li').addClass('active');
+    if($(this).hasClass('nav-ux')) {
+      $('.ux').removeClass('dim');
+      $('.print, .web, .apps').addClass('dim');
+    }
+    else if($(this).hasClass('nav-print')) {
+      $('.print').removeClass('dim');
+      $('.ux, .web, .apps').addClass('dim');
+    }
+    else if($(this).hasClass('nav-web')) {
+      $('.web').removeClass('dim');
+      $('.print, .ux, .apps').addClass('dim');
+    }
+    else if($(this).hasClass('nav-apps')) {
+      $('.apps').removeClass('dim');
+      $('.print, .web, .ux').addClass('dim');
+    } else if($(this).hasClass('nav-all')) {
+      $('.print, .web, .ux, .apps').removeClass('dim');
+    }
+  });
+});
+</script>
