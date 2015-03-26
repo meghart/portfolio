@@ -1,0 +1,57 @@
+<div id="container">
+	<div class="brand">
+    	<h1>Stay tuned</h1>
+        <p>Portfolio site in progress</p>
+    </div>
+    <div id="content">
+    	<div class="content">            
+            <div class="social-networks">
+            	<!--<a target="_blank" href="http://www.facebook.com/meghanhartman09"><span class="fa fa-facebook"></span></a>-->
+                <a target="_blank" href="//www.twitter.com/meghanmhartman"><span class="fa fa-twitter"></span></a>
+                <a href="//www.linkedin.com/in/meghanhartman"><span class="fa fa-linkedin"></span></a>
+                <a href="//github.com/meghart"><span class="fa fa-github-alt"></span></a>
+                <a href="//instagram.com/mmh337/"><span class="fa fa-instagram"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    
+    function animate() {
+        $('#container .brand h1').animate({top:'42%'}, 1500, function(){
+            $('#container .brand h1').animate({top:'50%'}, 1500, function(){
+                animate();
+            });
+        });
+    }
+    animate(); 
+    
+    // halfObject
+    var halfObject = function(){
+        var brandWidth = ($('#container .brand h1').width() / 2);
+        var brandHeight = ($('#container .brand h1').height() / 2);
+        $('#container .brand h1').css({
+            'margin-left': -brandWidth + "px",
+            'margin-top': -brandHeight + "px"
+        });
+        
+        var brandWidthParagraph = ($('#container .brand p').width() / 2);
+        var brandHeightParagraph = ($('#container .brand p').height() / 2);
+        $('#container .brand p').css({
+            'margin-left': -brandWidthParagraph + "px",
+            'margin-top': -brandHeightParagraph + "px"
+        });
+        
+        var contentWidth = ($('#container #content .content').width() / 2);
+        var contentHeight = ($('#container #content .content').height() / 2);
+        $('#container #content .content').css({
+            'margin-left': -contentWidth + "px",
+            'margin-top': -contentHeight + "px"
+        });
+    }
+    halfObject();
+    
+});
+</script>
